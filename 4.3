@@ -1,0 +1,27 @@
+  
+//Sana Yasamani Khiabani 
+//3180650
+
+const int BUTTON_PIN = 3;  // The Wire
+
+const int LED_PIN =  13;   // The LED
+
+
+int buttonState = 0;   
+
+void setup() {
+ 
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+}
+
+void loop() {
+  
+  buttonState = digitalRead(BUTTON_PIN);
+
+  // control LED according to the state of button
+  if(buttonState == LOW)         // When the Wire senses the other through conductive materials
+    digitalWrite(LED_PIN, HIGH); // The LED lights up
+  else                           // When the Wire doesn't sense the other through conductive material
+    digitalWrite(LED_PIN, LOW);  // The LED turns off
+}
